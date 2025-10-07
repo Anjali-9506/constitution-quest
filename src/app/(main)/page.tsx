@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Award, History } from "lucide-react";
@@ -28,7 +29,6 @@ const features = [
 export default function HomePage() {
   return (
     <div className="container mx-auto">
-      {/* Hero Section */}
       <section className="relative -mx-4 -mt-4 md:-mx-8 md:-mt-8 h-[60vh] flex items-center justify-center text-center">
         <Image
           src="https://picsum.photos/1600/800"
@@ -36,7 +36,6 @@ export default function HomePage() {
           data-ai-hint="indian parliament"
           fill
           className="object-cover"
-          priority // <-- Best practice: Preload the largest image on the page
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
         <div className="relative z-10 p-4 text-foreground text-center">
@@ -58,7 +57,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-16">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">An Adventure in Learning</h2>
