@@ -1,4 +1,3 @@
-
 "use client";
 
 import { PageHeader } from "@/components/page-header";
@@ -18,7 +17,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function ExplorePage() {
+export default function ExploreClient() {
   const searchParams = useSearchParams();
   const articleId = searchParams.get("article") || "1";
   const [searchTerm, setSearchTerm] = useState("");
@@ -46,10 +45,12 @@ export default function ExplorePage() {
         return { ...foundArticle, part: part.part };
       }
     }
+    // Default fallback if no article is found
     return { ...constitution[0].articles[0], part: constitution[0].part };
   }, [articleId]);
 
   useEffect(() => {
+    // This forces a re-render for the animation when the articleId changes
     setActiveKey(prev => prev + 1);
   }, [articleId]);
 
